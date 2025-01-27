@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نظام غذائي صحي</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(to right, #4caf50, #81c784);
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        nav {
+            background-color: #333;
+            overflow: hidden;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        nav a {
+            float: right;
+            display: block;
+            color: white;
+            padding: 14px 20px;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        nav a:hover {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .content {
+            margin: 20px;
+        }
+        .category {
+            margin-bottom: 30px;
+        }
+        .exercise {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 20px;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        .exercise img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .exercise img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .exercise div {
+            text-align: center;
+            margin: 10px;
+        }
+        .hidden {
+            display: none;
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        .visible {
+            display: flex;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        h2 {
+            cursor: pointer;
+            color: #4CAF50;
+            transition: color 0.3s ease;
+        }
+        h2:hover {
+            color: #2E7D32;
+        }
+    </style>
+    <script>
+        function toggleDetails(categoryId) {
+            const details = document.getElementById(categoryId);
+            if (details.classList.contains('hidden')) {
+                details.classList.remove('hidden');
+                details.classList.add('visible');
+            } else {
+                details.classList.add('hidden');
+                details.classList.remove('visible');
+            }
+        }
+    </script>
+</head>
+<body>
+
+<header>
+    <h1>تمارين رياضية لكل الأعمار</h1>
+</header>
+
+<nav>
+    <a href="index.html">الصفحة الرئيسية</a>
+    <a href="nutrition.html">نظام غذائي صحي</a>
+    <a href="health-tips.html">أهمية الصحة والرياضة</a>
+    <a href="exercise.html">رياضة يومية خفيفة</a>
+    <a href="blood.html">تحليل معدل السكر و الضغط  </a>
+</nav>
+
+<div class="content">
+    <div class="category">
+        <h2 onclick="toggleDetails('seniors-exercises')">تمارين مناسبة لكبار السن</h2>
+        <div id="seniors-exercises" class="exercise hidden">
+            <div>
+                <h3>تمرين المشي</h3>
+                <img src="walking.jpg" alt="تمرين المشي">
+                <p>المشي يساعد على تحسين الدورة الدموية ويخفف التوتر.</p>
+            </div>
+            <div>
+                <h3>تمرين التمدد البسيط</h3>
+                <img src="stretching-seniors.jpg" alt="تمرين التمدد">
+                <p>تمرين يساعد في زيادة المرونة ومنع تصلب العضلات.</p>
+            </div>
+            <div>
+                <h3>تمرين اليوغا</h3>
+                <img src="yoga-seniors.jpg" alt="تمرين اليوغا">
+                <p>يساعد على تحسين التوازن والاسترخاء.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="category">
+        <h2 onclick="toggleDetails('youth-exercises')">تمارين مناسبة للشباب</h2>
+        <div id="youth-exercises" class="exercise hidden">
+            <div>
+                <h3>تمرين رفع الأوزان</h3>
+                <img src="weightlifting.jpg" alt="تمرين رفع الأوزان">
+                <p>يساعد في بناء العضلات وزيادة القوة البدنية.</p>
+            </div>
+            <div>
+                <h3>تمرين الجري</h3>
+                <img src="running.jpg" alt="تمرين الجري">
+                <p>يحسن اللياقة القلبية والقدرة على التحمل.</p>
+            </div>
+            <div>
+                <h3>تمرين الضغط</h3>
+                <img src="pushups.jpg" alt="تمرين الضغط">
+                <p>يعزز القوة العضلية للجزء العلوي من الجسم.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="category">
+        <h2 onclick="toggleDetails('kids-exercises')">تمارين مناسبة للأطفال</h2>
+        <div id="kids-exercises" class="exercise hidden">
+            <div>
+                <h3>القفز بالحبل</h3>
+                <img src="jumping-rope.jpg" alt="القفز بالحبل">
+                <p>نشاط ممتع يساعد على تحسين التنسيق واللياقة.</p>
+            </div>
+            <div>
+                <h3>تمرين الألعاب الحركية</h3>
+                <img src="kids-activities.jpg" alt="تمرين الألعاب الحركية">
+                <p>يشمل أنشطة تفاعلية تساعد الأطفال على الحركة والنشاط.</p>
+            </div>
+            <div>
+                <h3>تمرين التوازن</h3>
+                <img src="balance-kids.jpg" alt="تمرين التوازن">
+                <p>يساعد على تعزيز التركيز وتحسين التوازن الجسدي.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer style="background-color: #333; color: white; text-align: center; padding: 10px 0; margin-top: 20px;">
+    <p>© 2025 تمارين رياضية - جميع الحقوق محفوظة</p>
+    <a href="contact.html" style="color: #4CAF50; text-decoration: none;">اتصل بنا</a>
+</footer>
+
+</body>
+</html>
